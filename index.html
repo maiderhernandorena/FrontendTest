@@ -2,10 +2,22 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Hello!</title>
+    <title>FrontendTest</title>
 </head>
-<body>
 
-<h1>Hello!</h1>
+<body>
+    <h1>FrontendTest</h1>
+    <div>
+        <form id="form">
+            <input id="query" type="text" placeholder="search username..."/>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div id="user"></div>
+    <div id="repos"></div>
+    <div id="error"></div>
+
+    <script src="./searchPanel.js"></script>
+    <script src="./logic/index.js"></script>
 </body>
 </html>
