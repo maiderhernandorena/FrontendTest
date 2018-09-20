@@ -31,24 +31,35 @@ form.addEventListener('submit', event => {
 })
 
 showUser = user => {
-    userData.innerHTML = `
-        <img src=${user.avatar_url}/>
-        <p>@${user.login}</p>
-        <h1>${user.name}</h1>
-        <a href=${user.html_url}>${user.html_url}</p> `
+    userData.style.display = "block"
+    userData.innerHTML = `<div>
+            <img src=${user.avatar_url}/>
+            <div>
+                <p>@${user.login}</p>
+                <h2>${user.name}</h2>
+                <a href=${user.html_url}>${user.html_url}</p>
+            </div>
+        </div> `
 }
 
 showRepos = repos => {
+    reposList.style.display = "block"
     reposList.innerHTML = `
+        <h2>Repositories</h2>
         <ul>
             ${repos.map(repo => (`<li>
                 <p>${repo.name}</p>
-                <img src="./assets/code-fork-symbol.svg" />
-                <p>${repo.stargazers_count}</p>
-                <img src="./assets/star.svg" />
-                <p>${repo.forks_count}</p>
+                <div>
+                    <img src="./assets/star.svg" />
+                    <p>${repo.stargazers_count}</p>
+                    <img src="./assets/code-fork-symbol.svg" />
+                    <p>${repo.forks_count}</p>
+                </div>
             </li>`))}
         </ul>`
 }
 
-showError = () => errorMessage.innerHTML = `<h3>Does not exist</h3>`
+showError = () => {
+    errorMessage.style.display = "block"
+    errorMessage.innerHTML = `<p>Does not exist</p>`
+}
